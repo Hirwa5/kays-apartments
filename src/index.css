@@ -1,0 +1,144 @@
+/* ─────────────────────────────────────────────────────────────
+   Global styles: the BAGIRE design system, adapted for Kay's Apartments.
+   Reusable classes (buttons, inputs, labels…) live in @layer components
+   so you can use them anywhere: className="btn btn-gold"
+   ───────────────────────────────────────────────────────────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* keeps #anchors from hiding under the sticky navbar */
+    scroll-padding-top: 96px;
+  }
+
+  body {
+    @apply font-sans bg-canvas text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-sans font-semibold tracking-tight;
+  }
+
+  ::selection {
+    background: #b8863a;
+    color: #ffffff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #eef0f3;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c9a25c;
+    border-radius: 10px;
+  }
+
+  input[type='date']::-webkit-calendar-picker-indicator,
+  input[type='time']::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+
+  :focus-visible {
+    outline: 2px solid #b8863a;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Page width container */
+  .wrap {
+    @apply mx-auto max-w-[1180px] px-5 sm:px-8;
+  }
+
+  /* Small uppercase label above headings */
+  .eyebrow {
+    @apply font-mono text-[12px] uppercase tracking-[0.16em] text-accent-soft;
+  }
+  .eyebrow-light {
+    @apply font-mono text-[12px] uppercase tracking-[0.16em] text-gold-soft;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex cursor-pointer select-none items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-[22px] py-3 font-sans text-sm font-semibold transition-all duration-200 disabled:pointer-events-none disabled:opacity-60;
+  }
+  .btn-gold {
+    @apply bg-gold text-white shadow-soft hover:bg-gold-soft active:scale-[0.99];
+  }
+  .btn-ghost {
+    @apply border border-hairline bg-transparent text-ink hover:border-accent-soft hover:text-accent-soft;
+  }
+  .btn-dark {
+    @apply bg-ink text-white hover:bg-black active:scale-[0.99];
+  }
+  .btn-on-dark {
+    @apply border border-white/25 bg-white/10 text-white backdrop-blur-sm hover:border-white/50 hover:bg-white/15;
+  }
+  .btn-whatsapp {
+    @apply bg-whatsapp text-white shadow-soft hover:bg-whatsapp-dark active:scale-[0.99];
+  }
+
+  /* Cards */
+  .card-surface {
+    @apply rounded-2xl border border-hairline bg-surface;
+  }
+  .card-white {
+    @apply rounded-2xl border border-hairline bg-white;
+  }
+
+  /* Headline text that fades from slate to gold */
+  .text-gradient {
+    background: linear-gradient(120deg, #475569 0%, #b8863a 60%, #c9a25c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Same idea for text on dark photos: soft cream to gold */
+  .text-gradient-light {
+    background: linear-gradient(120deg, #f6ead2 0%, #e2c38a 45%, #c9a25c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Thin diagonal lines background pattern */
+  .contour-pattern {
+    background-image: repeating-linear-gradient(135deg, rgba(71, 85, 105, 0.14) 0 2px, transparent 2px 34px);
+  }
+
+  /* Form fields */
+  .form-label {
+    @apply mb-1.5 block font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted;
+  }
+  .input {
+    @apply w-full rounded-2xl border border-hairline bg-white px-3.5 py-3 font-sans text-[14px] text-ink placeholder-muted/60 transition-all;
+  }
+  .input:focus {
+    @apply border-gold/40 bg-white outline-none ring-4 ring-gold/10;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

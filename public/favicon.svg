@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Placeholder favicon: replace this file with your own icon (keep the name favicon.svg, or update index.html) -->
+  <circle cx="16" cy="16" r="15" fill="#B8863A"/>
+  <circle cx="16" cy="16" r="10.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1.6"/>
+</svg>
