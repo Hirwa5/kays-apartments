@@ -1,7 +1,6 @@
 import Reveal from './Reveal';
 import ContourLines from './ContourLines';
 
-/** Dark rounded call-to-action panel with gold lines. Put buttons inside as children. */
 export default function CtaBand({ eyebrow, title, text, children, id }) {
   return (
     <section id={id} className="wrap py-16 md:py-24">

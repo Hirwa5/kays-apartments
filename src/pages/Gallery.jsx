@@ -12,8 +12,8 @@ export default function Gallery() {
   return (
     <>
       <PageHero
-        image={images.galleryHero}
-        imageAlt="Bright living area with plants"
+        image={images.galleryBanner}
+        imageAlt="Carved wooden wall art in one of the apartments"
         eyebrow="Gallery"
         title="Take a look"
         highlight="inside."
@@ -32,7 +32,7 @@ export default function Gallery() {
         <Link to="/contact#schedule" className="btn btn-gold !px-7 !py-3.5">
           <CalendarDays className="h-4 w-4" /> Schedule the visit
         </Link>
-        <Link to="/residents" className="btn btn-on-dark !px-7 !py-3.5">
+        <Link to="/residence" className="btn btn-on-dark !px-7 !py-3.5">
           Book your stay <ArrowRight className="h-4 w-4" />
         </Link>
       </CtaBand>

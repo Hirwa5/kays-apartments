@@ -1,7 +1,3 @@
-/**
- * Pill-style filter buttons (Residents and Gallery pages).
- * options: [{ value: 'all', label: 'All', count: 8 }, ...]
- */
 export default function FilterTabs({ options, value, onChange, label }) {
   return (
     <div role="tablist" aria-label={label} className="no-scrollbar flex w-fit max-w-full gap-1 overflow-x-auto rounded-2xl border border-hairline bg-surface p-1">

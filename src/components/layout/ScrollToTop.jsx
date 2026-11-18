@@ -1,10 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-/**
- * When the page changes, jump back to the top.
- * If the link has a #section (e.g. /contact#schedule), scroll to that section instead.
- */
 export default function ScrollToTop() {
   const { pathname, hash } = useLocation();
 

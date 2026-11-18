@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-/** Returns how far the page has been scrolled, from 0 (top) to 1 (bottom). */
 export default function useScrollProgress() {
   const [progress, setProgress] = useState(0);
 

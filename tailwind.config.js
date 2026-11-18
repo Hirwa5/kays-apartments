@@ -1,8 +1,3 @@
-/** @type {import('tailwindcss').Config} */
-// Design tokens carried over from the BAGIRE frontend.
-// Colour names were renamed so they describe what they are:
-//   ink    = main dark text   (was "ivory" in BAGIRE)
-//   canvas = page background  (was "basalt" in BAGIRE)
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
@@ -49,7 +44,6 @@ export default {
         }
       },
       animation: {
-        // duration is set on the element to match heroSlideInterval
         'hero-progress': 'hero-progress 5s linear forwards'
       }
     }

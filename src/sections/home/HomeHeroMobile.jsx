@@ -8,12 +8,9 @@ import { site } from '../../config/site';
 import { heroSlides, heroSlideInterval } from '../../data/heroSlides';
 import { units, lowestPrice } from '../../data/units';
 
-// MOBILE hero (phones and tablets, below 1024px). Desktop uses HomeHero.jsx.
-// Full-screen photo slideshow first, then a short stats strip.
 export default function HomeHeroMobile() {
   const [active, setActive] = useState(0);
 
-  // Move to the next photo automatically. Tapping a bar restarts the timer.
   useEffect(() => {
     const timer = setTimeout(() => setActive((i) => (i + 1) % heroSlides.length), heroSlideInterval);
     return () => clearTimeout(timer);
@@ -39,11 +36,9 @@ export default function HomeHeroMobile() {
       >
         <HeroSlideshow slides={heroSlides} active={active} />
 
-        {/* Darken the photo so the text is easy to read */}
         <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/15 to-ink/90" aria-hidden="true" />
         <ContourLines className="absolute inset-0 h-full w-full opacity-25" />
 
-        {/* Top: which photo is showing */}
         <div className="wrap relative w-full pt-5">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/15 px-3 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.12em] text-white backdrop-blur-md">
             <span className="text-gold-soft">
@@ -53,7 +48,6 @@ export default function HomeHeroMobile() {
           </span>
         </div>
 
-        {/* Bottom: headline and buttons */}
         <div className="wrap relative mt-auto w-full pb-5 pt-16">
           <motion.p {...fadeUp(0)} className="eyebrow-light">
             Kicukiro · Kigali · Rwanda
@@ -68,7 +62,7 @@ export default function HomeHeroMobile() {
           </motion.p>
 
           <motion.div {...fadeUp(0.24)} className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <Link to="/residents" className="btn btn-gold !py-3.5 sm:flex-1">
+            <Link to="/residence" className="btn btn-gold !py-3.5 sm:flex-1">
               Book your stay <ArrowRight className="h-4 w-4" />
             </Link>
             <Link to="/contact#schedule" className="btn btn-on-dark !py-3.5 sm:flex-1">
@@ -76,7 +70,6 @@ export default function HomeHeroMobile() {
             </Link>
           </motion.div>
 
-          {/* Photo progress bars (tap to jump). The WhatsApp button sits to the right of this row. */}
           <div className="mt-5 flex h-16 items-center gap-2">
             {heroSlides.map((slide, i) => (
               <button
@@ -102,7 +95,6 @@ export default function HomeHeroMobile() {
         </div>
       </section>
 
-      {/* Quick stats under the photos */}
       <div className="border-b border-hairline bg-surface">
         <div className="wrap grid grid-cols-3 divide-x divide-hairline py-6 text-center">
           {stats.map((stat) => (

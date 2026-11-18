@@ -8,7 +8,6 @@ import { getUnitType } from '../../data/units';
 import { amenityByKey } from '../../data/amenities';
 import { whatsappUrl, bookUnitMessage } from '../../utils/whatsapp';
 
-/** One apartment card on the Residents page: photo, description, amenities, price and Book now. */
 export default function UnitCard({ unit, index = 0 }) {
   const type = getUnitType(unit);
   const unitAmenities = unit.amenities.map((key) => amenityByKey[key]).filter(Boolean);

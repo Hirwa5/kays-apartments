@@ -1,8 +1,3 @@
-/* ─────────────────────────────────────────────────────────────
-   Global styles: the BAGIRE design system, adapted for Kay's Apartments.
-   Reusable classes (buttons, inputs, labels…) live in @layer components
-   so you can use them anywhere: className="btn btn-gold"
-   ───────────────────────────────────────────────────────────── */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +5,6 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* keeps #anchors from hiding under the sticky navbar */
     scroll-padding-top: 96px;
   }
 
@@ -54,12 +48,10 @@
 }
 
 @layer components {
-  /* Page width container */
   .wrap {
     @apply mx-auto max-w-[1180px] px-5 sm:px-8;
   }
 
-  /* Small uppercase label above headings */
   .eyebrow {
     @apply font-mono text-[12px] uppercase tracking-[0.16em] text-accent-soft;
   }
@@ -67,7 +59,6 @@
     @apply font-mono text-[12px] uppercase tracking-[0.16em] text-gold-soft;
   }
 
-  /* Buttons */
   .btn {
     @apply inline-flex cursor-pointer select-none items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-[22px] py-3 font-sans text-sm font-semibold transition-all duration-200 disabled:pointer-events-none disabled:opacity-60;
   }
@@ -87,7 +78,6 @@
     @apply bg-whatsapp text-white shadow-soft hover:bg-whatsapp-dark active:scale-[0.99];
   }
 
-  /* Cards */
   .card-surface {
     @apply rounded-2xl border border-hairline bg-surface;
   }
@@ -95,7 +85,6 @@
     @apply rounded-2xl border border-hairline bg-white;
   }
 
-  /* Headline text that fades from slate to gold */
   .text-gradient {
     background: linear-gradient(120deg, #475569 0%, #b8863a 60%, #c9a25c 100%);
     -webkit-background-clip: text;
@@ -104,7 +93,6 @@
     color: transparent;
   }
 
-  /* Same idea for text on dark photos: soft cream to gold */
   .text-gradient-light {
     background: linear-gradient(120deg, #f6ead2 0%, #e2c38a 45%, #c9a25c 100%);
     -webkit-background-clip: text;
@@ -113,12 +101,10 @@
     color: transparent;
   }
 
-  /* Thin diagonal lines background pattern */
   .contour-pattern {
     background-image: repeating-linear-gradient(135deg, rgba(71, 85, 105, 0.14) 0 2px, transparent 2px 34px);
   }
 
-  /* Form fields */
   .form-label {
     @apply mb-1.5 block font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted;
   }

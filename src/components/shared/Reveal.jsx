@@ -1,9 +1,5 @@
 import { motion } from 'framer-motion';
 
-/**
- * Fades its content up into view the first time it scrolls onto the screen.
- * Tip: put hover effects on an element INSIDE Reveal, not on Reveal itself.
- */
 export default function Reveal({ children, delay = 0, y = 24, className = '', as = 'div', ...rest }) {
   const Component = motion[as] || motion.div;
   return (

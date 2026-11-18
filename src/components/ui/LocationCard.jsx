@@ -3,7 +3,6 @@ import Reveal from '../shared/Reveal';
 import { site } from '../../config/site';
 import { mapsLinks } from '../../utils/maps';
 
-/** "Find us" card with a live map, Get directions and View on Google Maps. */
 export default function LocationCard() {
   return (
     <Reveal>

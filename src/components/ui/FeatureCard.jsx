@@ -1,6 +1,5 @@
 import Reveal from '../shared/Reveal';
 
-/** Centered card with a large round icon (Transport page → Why choose our transport). */
 export default function FeatureCard({ feature, index = 0 }) {
   const Icon = feature.icon;
   return (

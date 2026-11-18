@@ -1,7 +1,3 @@
-// ─────────────────────────────────────────────────────────────
-// Amenities: shown on the Home page and on every apartment card.
-// Icons come from https://lucide.dev/icons (change the import to swap one).
-// ─────────────────────────────────────────────────────────────
 import { Car, Wifi, CookingPot, Plane } from 'lucide-react';
 
 export const amenities = [
@@ -36,5 +32,4 @@ export const amenities = [
   }
 ];
 
-// Quick lookup by key, e.g. amenityByKey.wifi
 export const amenityByKey = Object.fromEntries(amenities.map((a) => [a.key, a]));

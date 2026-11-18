@@ -1,6 +1,5 @@
 import Reveal from './Reveal';
 
-/** Eyebrow label + title + intro text, used at the top of most sections. */
 export default function SectionHeading({ eyebrow, title, text, align = 'left', light = false, className = '' }) {
   const centered = align === 'center';
   return (

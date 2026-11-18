@@ -1,6 +1,5 @@
 import { site } from '../../config/site';
 
-/** Price summary for one apartment type (top of Residents page). Clicking it filters the list. */
 export default function PricingCard({ type, count, active = false, onSelect }) {
   return (
     <button

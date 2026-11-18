@@ -10,7 +10,7 @@ export default function HomeCta() {
       title={`Ready to make ${site.name} your home in Kigali?`}
       text="Choose a one- or two-bedroom apartment and book directly on WhatsApp, or come and see it first."
     >
-      <Link to="/residents" className="btn btn-gold !px-7 !py-3.5">
+      <Link to="/residence" className="btn btn-gold !px-7 !py-3.5">
         See apartments & prices <ArrowRight className="h-4 w-4" />
       </Link>
       <Link to="/contact#schedule" className="btn btn-on-dark !px-7 !py-3.5">

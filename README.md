@@ -33,7 +33,7 @@ npm run preview  # preview that final version locally
 ```
 
 `vercel.json` (Vercel) and `public/_redirects` (Netlify) are included so page links like
-`/residents` work after you publish.
+`/residence` work after you publish.
 
 ---
 
@@ -42,36 +42,40 @@ npm run preview  # preview that final version locally
 | I want to change…                                      | Edit this file                                  |
 | ------------------------------------------------------- | ----------------------------------------------- |
 | Phone, WhatsApp number, email, address, map location    | `src/config/site.js`                            |
-| Prices ($35 / $60), unit descriptions, unit photos      | `src/data/units.js`                             |
+| Prices ($40 / $45), unit descriptions, unit photos      | `src/data/units.js`                             |
 | Amenities (parking, Wi-Fi, kitchen, airport transport)  | `src/data/amenities.js`                         |
 | Gallery photos and categories                           | `src/data/gallery.js`                           |
 | Virtual tour rooms, or add a video / 3D tour link       | `src/data/tour.js`                              |
 | "Why choose our transport" cards                        | `src/data/transport.js`                         |
 | **All photos used on the site (one place)**             | `src/data/images.js`                            |
 | Mobile home slideshow (which photos, captions, speed)   | `src/data/heroSlides.js`                        |
-| Background photos behind Residents / Gallery titles     | `residentsHero` / `galleryHero` in `src/data/images.js` |
+| Background photos behind Residence / Gallery titles     | `public/photos/residence-banner.jpg` / `gallery-banner.jpg` |
 | WhatsApp message format (all buttons)                   | `src/utils/whatsapp.js`                         |
 | Google Maps links                                        | `src/utils/maps.js` (uses the location in site.js) |
 | Menu links                                               | `src/components/layout/Navbar.jsx`              |
 | Colours, fonts, shadows                                  | `tailwind.config.js`                            |
 | Buttons, inputs, labels styles                           | `src/index.css`                                 |
-| Logo (circle placeholder)                                | replace `public/logo.svg`                       |
-| Favicon (circle placeholder)                             | replace `public/favicon.svg`                    |
+| Logo (menu bar and footer)                               | `public/brand/logo.png`, `public/brand/logo-full.png` |
+| Favicon (browser tab and phone home screen)              | `public/favicon-32.png`, `public/favicon-192.png`, `public/apple-touch-icon.png` |
 
-### Using your own photos
+### Photos
 
-1. Copy your photos into `public/images/` (e.g. `public/images/living-room.jpg`).
-2. In `src/data/images.js`, replace the stock link with the path:
-   `livingMain: '/images/living-room.jpg',`
+All photos are in `public/photos/`. To change one, save the new photo over the old file with the
+same name (lowercase, ending in `.jpg`) and it changes everywhere it is used.
+Which file appears where is set in `src/data/images.js`, and the Gallery list is in
+`src/data/gallery.js`.
 
-Every page that uses that photo updates automatically. If a photo can't load, the site shows a
-tidy "Photo coming soon" panel instead of a broken image.
+### Logo and favicon
 
-### Using your own logo / favicon
+The original logo file is `public/brand/kays-logo.jpeg`. From it:
 
-Replace `public/logo.svg` and `public/favicon.svg` with your files (same names).
-If your logo is a PNG, save it as `public/logo.png` and change `/logo.svg` to `/logo.png` in
-`src/components/shared/Logo.jsx` (and the favicon line in `index.html`).
+- `public/brand/logo.png`: building and "KAY'S", transparent background, used in the menu bar
+- `public/brand/logo-full.png`: the full logo with the tagline, used in the footer
+- `public/favicon-32.png` and `public/favicon-192.png`: the browser tab icon
+- `public/apple-touch-icon.png`: the icon when someone saves the site to a phone home screen
+
+To change the logo later, save new files over these with the same names.
+The logo is placed in `src/components/shared/Logo.jsx` and the favicon in `index.html`.
 
 ---
 
@@ -85,7 +89,7 @@ Hello Kay's Apartments,
 *Request:* Book a stay
 *Unit:* Unit 03 · Two-bedroom apartment
 *Category:* Double · 2 bedroom, 2 bathrooms
-*Rate:* $60 / night
+*Rate:* $45 / night
 
 _Please complete:_
 *Check-in date:*
@@ -99,7 +103,7 @@ _Please complete:_
 | Button                                   | Request sent              |
 | ---------------------------------------- | ------------------------- |
 | Floating WhatsApp button (every page)    | General enquiry           |
-| "Book now" on each unit card (Residents) | Book a stay + unit details |
+| "Book now" on each unit card (Residence) | Book a stay + unit details |
 | "Book on WhatsApp" (Transport)           | Airport transport         |
 | "Send message" (Schedule a viewing form) | Schedule a viewing + all form details |
 
@@ -123,8 +127,8 @@ src/
     home/                   HomeHeroMobile (phones: photo slideshow), HomeHero (computers),
                             AboutSection, AmenitiesSection, VirtualTourSection, HomeCta
     transport/              TransportHero, TransportFeatures
-  pages/                    Home, Residents, Gallery, Transport, Contact
+  pages/                    Home, Residence, Gallery, Transport, Contact
 ```
 
-Pages: **Home** (`/`, with About, Amenities and Virtual tour), **Residents** (`/residents`),
+Pages: **Home** (`/`, with About, Amenities and Virtual tour), **Residence** (`/residence`),
 **Gallery** (`/gallery`), **Transport** (`/transport`), **Contact** (`/contact`; the viewing form is at `/contact#schedule`).

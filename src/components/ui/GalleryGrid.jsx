@@ -13,7 +13,6 @@ const SHAPES = {
   square: 'aspect-square'
 };
 
-/** Filterable photo grid; clicking a photo opens it full-screen. */
 export default function GalleryGrid() {
   const [category, setCategory] = useState('All');
   const [openIndex, setOpenIndex] = useState(null);

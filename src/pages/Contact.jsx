@@ -16,13 +16,11 @@ export default function Contact() {
       />
 
       <section className="wrap py-12 md:py-16">
-        {/* Left: Get in touch · Right: Schedule a viewing */}
         <div className="grid items-stretch gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <ContactInfoCard />
           <ScheduleViewingCard />
         </div>
 
-        {/* Below: Find us */}
         <div className="mt-6">
           <LocationCard />
         </div>

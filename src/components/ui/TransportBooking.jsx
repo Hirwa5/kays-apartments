@@ -5,7 +5,6 @@ import ContourLines from '../shared/ContourLines';
 import { site } from '../../config/site';
 import { whatsappUrl, transportMessage } from '../../utils/whatsapp';
 
-/** "Ready to book your transport?" panel with Call us and WhatsApp options (Transport page). */
 export default function TransportBooking() {
   return (
     <section id="book-transport" className="wrap scroll-mt-28 pb-16 pt-2 md:pb-24">
@@ -21,7 +20,6 @@ export default function TransportBooking() {
         </div>
 
         <div className="relative mx-auto mt-10 grid max-w-[860px] gap-4 md:grid-cols-2">
-          {/* Option 1: call */}
           <div className="flex flex-col rounded-2xl border border-white/15 bg-white/[0.06] p-6 backdrop-blur-sm md:p-7">
             <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20 text-gold-soft">
               <Phone className="h-5 w-5" />
@@ -36,7 +34,6 @@ export default function TransportBooking() {
             </a>
           </div>
 
-          {/* Option 2: WhatsApp */}
           <div className="flex flex-col rounded-2xl border border-white/15 bg-white/[0.06] p-6 backdrop-blur-sm md:p-7">
             <span className="flex h-12 w-12 items-center justify-center rounded-full bg-whatsapp/20 text-whatsapp">
               <FaWhatsapp className="h-6 w-6" aria-hidden="true" />

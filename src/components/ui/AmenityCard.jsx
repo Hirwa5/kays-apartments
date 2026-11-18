@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import Reveal from '../shared/Reveal';
 
-/** One amenity tile (Home page → Amenities section). */
 export default function AmenityCard({ amenity, index = 0 }) {
   const Icon = amenity.icon;
   return (

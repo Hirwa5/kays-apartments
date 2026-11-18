@@ -1,7 +1,3 @@
-// ─────────────────────────────────────────────────────────────
-// Transport page content: the "Why choose our transport" cards.
-// Icons come from https://lucide.dev/icons
-// ─────────────────────────────────────────────────────────────
 import { Clock, CarFront, ShieldCheck, UserCheck } from 'lucide-react';
 
 export const transportFeatures = [

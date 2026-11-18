@@ -9,11 +9,6 @@ import { todayISO } from '../../utils/format';
 
 const emptyForm = { fullName: '', email: '', phone: '', unit: '', date: '', time: '', message: '' };
 
-/**
- * "Schedule a viewing" form (Contact page, right side).
- * Nothing is stored: pressing "Send message" opens WhatsApp with all the details filled in.
- * Links like /contact?unit=unit-3#schedule pre-select a unit.
- */
 export default function ScheduleViewingCard() {
   const [params] = useSearchParams();
   const [form, setForm] = useState(() => {
@@ -22,7 +17,6 @@ export default function ScheduleViewingCard() {
   });
   const [sentUrl, setSentUrl] = useState('');
 
-  // If the visitor arrives from a unit card, pre-select that unit
   useEffect(() => {
     const unit = params.get('unit');
     if (unit && unitInterestLabel(unit)) setForm((f) => ({ ...f, unit }));

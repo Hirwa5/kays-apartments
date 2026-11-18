@@ -1,4 +1,3 @@
-// Decorative wavy gold lines (from the BAGIRE design), drawn over photos and dark panels.
 const PATHS = [
   'M-20 340 C 60 300, 100 380, 180 330 S 320 260, 420 330',
   'M-20 300 C 60 260, 110 330, 190 280 S 330 210, 420 280',

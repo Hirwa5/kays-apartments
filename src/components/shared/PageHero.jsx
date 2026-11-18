@@ -2,11 +2,6 @@ import { motion } from 'framer-motion';
 import Photo from './Photo';
 import ContourLines from './ContourLines';
 
-/**
- * Centered page header used on Residents, Gallery and Contact.
- * Pass `image` to show a background photo (white text on a darkened photo);
- * without it, the header uses the light grey BAGIRE style.
- */
 export default function PageHero({ eyebrow, title, highlight, text, image, imageAlt = '', children }) {
   const onPhoto = Boolean(image);
 

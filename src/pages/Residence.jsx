@@ -10,8 +10,8 @@ import UnitCard from '../components/ui/UnitCard';
 import { units, unitTypes, unitsOfType } from '../data/units';
 import { images } from '../data/images';
 
-export default function Residents() {
-  usePageTitle('Residents');
+export default function Residence() {
+  usePageTitle('Residence');
   const [filter, setFilter] = useState('all');
   const listRef = useRef(null);
 
@@ -34,9 +34,9 @@ export default function Residents() {
   return (
     <>
       <PageHero
-        image={images.residentsHero}
-        imageAlt="Furnished apartment living area"
-        eyebrow="Residents"
+        image={images.residenceBanner}
+        imageAlt="Living room with grey sofas and gold curtains"
+        eyebrow="Residence"
         title="Choose your"
         highlight="apartment."
         text="Single one-bedroom units and double two-bedroom units with two bathrooms. Every apartment is furnished and includes Wi-Fi, parking and access to airport transport."
@@ -68,7 +68,6 @@ export default function Residents() {
           ))}
         </div>
 
-        {/* Airport transport note */}
         <Reveal className="mt-12">
           <div className="flex flex-col items-start gap-4 rounded-2xl border border-hairline bg-surface p-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-4">

@@ -5,10 +5,9 @@ import { Menu, X, Phone } from 'lucide-react';
 import Logo from '../shared/Logo';
 import { site } from '../../config/site';
 
-// Main menu links: add, remove or rename pages here
 export const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'Residents', to: '/residents' },
+  { label: 'Residence', to: '/residence' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'Transport', to: '/transport' },
   { label: 'Contact', to: '/contact' }
@@ -26,7 +25,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close the mobile menu after navigating
   useEffect(() => setMobileOpen(false), [location.pathname, location.hash]);
 
   return (
@@ -38,7 +36,6 @@ export default function Navbar() {
       <div className="wrap flex items-center justify-between py-4 lg:py-[18px]">
         <Logo />
 
-        {/* Desktop links */}
         <nav className="hidden gap-[34px] lg:flex" aria-label="Main">
           {navLinks.map((link) => (
             <NavLink
@@ -63,18 +60,16 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop buttons */}
         <div className="hidden items-center gap-3 lg:flex">
           <a href={`tel:${site.phone.tel}`} className="btn btn-ghost">
             <Phone className="h-4 w-4" />
             Call us
           </a>
-          <Link to="/residents" className="btn btn-gold">
+          <Link to="/residence" className="btn btn-gold">
             Book now
           </Link>
         </div>
 
-        {/* Mobile menu toggle */}
         <button
           className="-mr-2 p-2 text-ink lg:hidden"
           onClick={() => setMobileOpen((open) => !open)}
@@ -85,7 +80,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.nav
@@ -113,7 +107,7 @@ export default function Navbar() {
                   <Phone className="h-4 w-4" />
                   Call us
                 </a>
-                <Link to="/residents" className="btn btn-gold flex-1">
+                <Link to="/residence" className="btn btn-gold flex-1">
                   Book now
                 </Link>
               </div>

@@ -4,10 +4,6 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Photo from '../shared/Photo';
 import { tour } from '../../data/tour';
 
-/**
- * Room-by-room walkthrough. If `tour.embedUrl` is set in src/data/tour.js,
- * a video / 3D tour is shown instead.
- */
 export default function VirtualTour() {
   const [active, setActive] = useState(0);
   const rooms = tour.rooms;
@@ -30,7 +26,6 @@ export default function VirtualTour() {
 
   return (
     <div className="grid gap-4 lg:grid-cols-[260px_1fr] lg:gap-5">
-      {/* Room list */}
       <div role="tablist" aria-label="Rooms" className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 lg:mx-0 lg:flex-col lg:px-0">
         {rooms.map((r, i) => {
           const selected = i === active;
@@ -55,7 +50,6 @@ export default function VirtualTour() {
         })}
       </div>
 
-      {/* Stage */}
       <div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-hairline bg-ink sm:aspect-[16/10]">
           <AnimatePresence mode="wait">
@@ -67,7 +61,7 @@ export default function VirtualTour() {
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               className="absolute inset-0"
             >
-              <Photo src={room.image} alt={`Virtual tour: ${room.title}`} className="h-full w-full" loading="eager" />
+              <Photo src={room.image} alt={`Virtual tour: ${room.title}`} className="h-full w-full" />
             </motion.div>
           </AnimatePresence>
 
@@ -102,7 +96,6 @@ export default function VirtualTour() {
             </div>
           </div>
         </div>
-        {/* Description below the photo on small screens */}
         <p className="mt-3 text-[14px] leading-relaxed text-muted sm:hidden">{room.description}</p>
       </div>
     </div>

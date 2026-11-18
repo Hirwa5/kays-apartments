@@ -8,7 +8,7 @@ const exploreLinks = [
   { label: 'About us', to: '/#about' },
   { label: 'Amenities', to: '/#amenities' },
   { label: 'Virtual tour', to: '/#virtual-tour' },
-  { label: 'Residents', to: '/residents' },
+  { label: 'Residence', to: '/residence' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'Transport', to: '/transport' },
   { label: 'Schedule a viewing', to: '/contact#schedule' }
@@ -19,7 +19,7 @@ export default function Footer() {
     <footer className="border-t border-hairline bg-surface/60">
       <div className="wrap grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1.1fr_1fr]">
         <div>
-          <Logo />
+          <Logo full />
           <p className="mt-4 max-w-[300px] text-[13.5px] leading-relaxed text-muted">
             Eight furnished one- and two-bedroom apartments in Kicukiro, Kigali, with airport transport on request.
           </p>

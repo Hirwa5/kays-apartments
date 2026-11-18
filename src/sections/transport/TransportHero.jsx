@@ -38,7 +38,7 @@ export default function TransportHero() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="relative min-h-[320px] self-stretch sm:min-h-[400px]"
         >
-          <Photo src={images.airport} alt="Airplane wing above the clouds" loading="eager" className="absolute inset-0 rounded-2xl border border-hairline">
+          <Photo src={images.transport} alt={`Courtyard and parking at ${site.name}`} loading="eager" className="absolute inset-0 rounded-2xl border border-hairline">
             <div className="absolute inset-0 bg-gradient-to-b from-ink/5 to-ink/40" />
             <ContourLines className="absolute inset-0 h-full w-full opacity-60" />
             <div className="absolute bottom-[18px] left-[18px] flex items-center gap-3 rounded-xl border border-hairline bg-white/85 px-4 py-3 backdrop-blur-md">

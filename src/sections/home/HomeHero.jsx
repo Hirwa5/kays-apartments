@@ -7,7 +7,6 @@ import { site } from '../../config/site';
 import { images } from '../../data/images';
 import { units, lowestPrice } from '../../data/units';
 
-// DESKTOP hero (screens 1024px and wider). Phones and tablets see HomeHeroMobile.jsx instead.
 export default function HomeHero() {
   const stats = [
     { value: String(units.length), label: 'Furnished apartments' },
@@ -31,7 +30,7 @@ export default function HomeHero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link to="/residents" className="btn btn-gold !px-7 !py-3.5">
+            <Link to="/residence" className="btn btn-gold !px-7 !py-3.5">
               Book your stay <ArrowRight className="h-4 w-4" />
             </Link>
             <Link to="/contact#schedule" className="btn btn-ghost !px-7 !py-3.5">
@@ -55,7 +54,7 @@ export default function HomeHero() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="relative min-h-[360px] self-stretch sm:min-h-[440px]"
         >
-          <Photo src={images.hero} alt={`Living room at ${site.name}`} loading="eager" className="absolute inset-0 rounded-2xl border border-hairline">
+          <Photo src={images.homeHero} alt={`Living room at ${site.name}`} className="absolute inset-0 rounded-2xl border border-hairline">
             <div className="absolute inset-0 bg-gradient-to-b from-ink/5 to-ink/40" />
             <ContourLines className="absolute inset-0 h-full w-full opacity-70" />
             <div className="absolute bottom-[18px] left-[18px] rounded-xl border border-hairline bg-white/85 px-4 py-3 backdrop-blur-md">

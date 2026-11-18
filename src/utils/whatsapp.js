@@ -1,35 +1,7 @@
-// ─────────────────────────────────────────────────────────────
-// WhatsApp messages: ONE common format for every WhatsApp button.
-//
-// Every message arrives in the apartment's WhatsApp inbox like this:
-//
-//   Hello Kay's Apartments,
-//
-//   *Request:* Book a stay
-//   *Unit:* Unit 03 · Two-bedroom apartment
-//   *Rate:* $60 / night
-//
-//   _Please complete:_
-//   *Check-in date:*
-//   ...
-//
-//   (Sent from the Kay's Apartments website)
-//
-// *text* shows as bold in WhatsApp and _text_ as italic.
-// Lines under "Please complete" are left empty for the client to fill in
-// before pressing send.
-// ─────────────────────────────────────────────────────────────
 import { site } from '../config/site';
 import { getUnitTitle, getUnitType } from '../data/units';
 import { formatDate, formatTime } from './format';
 
-/**
- * Builds a message in the common format.
- * @param {object}   options
- * @param {string}   options.request  What the client wants, e.g. "Book a stay"
- * @param {Array<{label: string, value: string|number}>} [options.details]  Lines the website fills in
- * @param {string[]} [options.toFill]  Lines left blank for the client to complete
- */
 export function buildWhatsAppMessage({ request, details = [], toFill = [] }) {
   const lines = [`Hello ${site.name},`, '', `*Request:* ${request}`];
 
@@ -46,7 +18,6 @@ export function buildWhatsAppMessage({ request, details = [], toFill = [] }) {
   return lines.join('\n');
 }
 
-/** Link that opens WhatsApp (app on phones, web/desktop on computers) with the message ready. */
 export function whatsappUrl(message) {
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
 }
@@ -57,16 +28,12 @@ export function openWhatsApp(message) {
   return url;
 }
 
-// ── Ready-made messages used around the site ─────────────────
-
-/** Floating WhatsApp button (bottom-right on every page) */
 export const generalEnquiryMessage = () =>
   buildWhatsAppMessage({
     request: 'General enquiry',
     toFill: ['Your name', 'Your question']
   });
 
-/** "Book now" on each apartment card (Residents page) */
 export const bookUnitMessage = (unit) => {
   const type = getUnitType(unit);
   return buildWhatsAppMessage({
@@ -83,14 +50,12 @@ export const bookUnitMessage = (unit) => {
   });
 };
 
-/** "Book on WhatsApp" on the Transport page */
 export const transportMessage = () =>
   buildWhatsAppMessage({
     request: 'Airport transport',
     toFill: ['Pickup or drop-off', 'Date', 'Time', 'Flight number', 'Number of passengers', 'Staying at Kay\'s Apartments (yes/no)']
   });
 
-/** "Send message" on the Schedule a viewing card (Contact page) */
 export const viewingMessage = (form) =>
   buildWhatsAppMessage({
     request: 'Schedule a viewing',

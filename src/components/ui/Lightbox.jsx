@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import Photo from '../shared/Photo';
 
-/** Full-screen photo viewer. Arrow keys move between photos, Esc closes. */
 export default function Lightbox({ items, index, onChange, onClose }) {
   const item = items[index];
   const go = (step) => onChange((index + step + items.length) % items.length);

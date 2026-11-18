@@ -5,7 +5,6 @@ import Reveal from '../shared/Reveal';
 import { site } from '../../config/site';
 import { whatsappUrl, generalEnquiryMessage } from '../../utils/whatsapp';
 
-/** "Get in touch" block (Contact page, left side). */
 export default function ContactInfoCard() {
   const items = [
     {
@@ -69,7 +68,6 @@ export default function ContactInfoCard() {
         </ul>
 
         <div className="mt-auto space-y-5 pt-8">
-          {/* Airport pickup note */}
           <Link
             to="/transport"
             className="group flex items-center gap-4 rounded-2xl border border-hairline bg-white p-4 transition-all hover:border-gold hover:shadow-soft"

@@ -27,7 +27,7 @@ export default function AboutSection() {
     <section id="about" className="scroll-mt-24">
       <div className="wrap grid items-center gap-12 py-20 md:py-[100px] lg:grid-cols-2 lg:gap-14">
         <Reveal className="relative">
-          <Photo src={images.building} alt={`${site.name} building`} className="aspect-[4/3] rounded-2xl border border-hairline lg:aspect-[5/5]">
+          <Photo src={images.outside} alt={`${site.name} building seen from the street`} className="aspect-[4/3] rounded-2xl border border-hairline lg:aspect-[5/5]">
             <span className="absolute bottom-4 left-4 rounded bg-ink/55 px-3 py-1.5 font-mono text-[12px] tracking-wider text-white backdrop-blur-sm">
               {site.address.street} · {site.address.area}
             </span>
@@ -64,7 +64,6 @@ export default function AboutSection() {
         </Reveal>
       </div>
 
-      {/* Stats band */}
       <div className="border-y border-hairline bg-surface">
         <div className="wrap grid grid-cols-2 py-10 lg:grid-cols-4">
           {stats.map((stat, i) => (
